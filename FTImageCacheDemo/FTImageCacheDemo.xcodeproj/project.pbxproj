@@ -12,7 +12,7 @@
 		2A65BA8F1E138150004A7381 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A65BA8D1E138150004A7381 /* Main.storyboard */; };
 		2A65BA911E138150004A7381 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2A65BA901E138150004A7381 /* Assets.xcassets */; };
 		2A65BA941E138150004A7381 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A65BA921E138150004A7381 /* LaunchScreen.storyboard */; };
-		2A65BA9D1E138191004A7381 /* FTImageCach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65BA9C1E138191004A7381 /* FTImageCach.swift */; };
+		2A65BA9D1E138191004A7381 /* FTImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65BA9C1E138191004A7381 /* FTImageCache.swift */; };
 		2A65BAA01E138393004A7381 /* FTImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A65BA9F1E138393004A7381 /* FTImageDownloader.swift */; };
 /* End PBXBuildFile section */
 
@@ -24,8 +24,9 @@
 		2A65BA901E138150004A7381 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2A65BA931E138150004A7381 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2A65BA951E138150004A7381 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2A65BA9C1E138191004A7381 /* FTImageCach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageCach.swift; sourceTree = "<group>"; };
+		2A65BA9C1E138191004A7381 /* FTImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageCache.swift; sourceTree = "<group>"; };
 		2A65BA9F1E138393004A7381 /* FTImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FTImageDownloader.swift; sourceTree = "<group>"; };
+		2A65BAA21E13ADA3004A7381 /* FTImageCache-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FTImageCache-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +73,9 @@
 		2A65BA9B1E13817B004A7381 /* FTImageCache */ = {
 			isa = PBXGroup;
 			children = (
-				2A65BA9C1E138191004A7381 /* FTImageCach.swift */,
+				2A65BA9C1E138191004A7381 /* FTImageCache.swift */,
 				2A65BA9F1E138393004A7381 /* FTImageDownloader.swift */,
+				2A65BAA21E13ADA3004A7381 /* FTImageCache-Bridging-Header.h */,
 			);
 			name = FTImageCache;
 			path = ../../FTImageCache;
@@ -112,6 +114,7 @@
 					2A65BA851E138150004A7381 = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = E83AC9WR2F;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -152,7 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A65BA9D1E138191004A7381 /* FTImageCach.swift in Sources */,
+				2A65BA9D1E138191004A7381 /* FTImageCache.swift in Sources */,
 				2A65BA8C1E138150004A7381 /* ViewController.swift in Sources */,
 				2A65BAA01E138393004A7381 /* FTImageDownloader.swift in Sources */,
 				2A65BA8A1E138150004A7381 /* AppDelegate.swift in Sources */,
@@ -276,11 +279,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = FTImageCacheDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageCacheDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../FTImageCache/FTImageCache-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -289,11 +295,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = E83AC9WR2F;
 				INFOPLIST_FILE = FTImageCacheDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.liufengting.FTImageCacheDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "../FTImageCache/FTImageCache-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -317,6 +325,7 @@
 				2A65BA9A1E138150004A7381 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
